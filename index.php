@@ -114,101 +114,111 @@ if (isset($_POST["add"])) {
 </head>
 
 <body>
-    <div class="">
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Selamat Datang Di WebSite Data Kecil menggunakan bootstrap 5.3</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                    <!-- <span class="navbar-toggler-icon"></span> -->
-                    <i class="bi bi-person-plus-fill"></i>
-                    <i class="bi bi-three-dots"></i>
-                    <i class="bi bi-box-arrow-left"></i>
-                </button>
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Tambah data</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
+    <nav class="navbar bg-black fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Data Daftar nama</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon"></span> -->
+                <i class="bi bi-person-plus-fill"></i>
+                <i class="bi bi-three-dots"></i>
+                <i class="bi bi-box-arrow-left"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Tambah data</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
 
-                        <!-- tambah data -->
-                        <span class="input-group-text"><i class="bi bi-person"><i class="bi bi-body-text"></i></i></span>
-                        <form class="d-blok" method="post" action="" enctype="multipart/form-data">
-                            <div class="form-floating mb-3">
-                                <input class="form-control me-2 mb-2 " type="text" placeholder="Masukan nama" name="nama" autocomplete="off">
-                                <label>isi nama</label>
-                            </div>
-                            <!-- <input class="form-control me-2 mb-2 " type="text" placeholder="Masukan gender" name="jk" autocomplete="off"> -->
-                            <span class="input-group-text"><i class="bi bi-gender-ambiguous"></i></span>
-                            <div class="form-floating mb-3">
-                                <select name="jk" class="form-select mb-3" id="floatingSelect" aria-label="Floating label select example">
-                                    <option value="Pria">Pria<i class="bi bi-person-standing"></i></option>
-                                    <option value="Wanita">Wanita</option>
-                                </select>
-                                <label for="floatingSelect">Pilih Jenis Kelamin</label>
-                            </div>
+                    <!-- tambah data -->
+                    <span class="input-group-text"><i class="bi bi-person"><i class="bi bi-body-text"></i></i></span>
+                    <form class="d-blok" method="post" action="" enctype="multipart/form-data">
+                        <div class="form-floating mb-3">
+                            <input class="form-control me-2 mb-2 " type="text" placeholder="Masukan nama" name="nama" autocomplete="off">
+                            <label>isi nama</label>
+                        </div>
+                        <!-- <input class="form-control me-2 mb-2 " type="text" placeholder="Masukan gender" name="jk" autocomplete="off"> -->
+                        <span class="input-group-text"><i class="bi bi-gender-ambiguous"></i></span>
+                        <div class="form-floating mb-3">
+                            <select name="jk" class="form-select mb-3" id="floatingSelect" aria-label="Floating label select example">
+                                <option value="Pria">Pria<i class="bi bi-person-standing"></i></option>
+                                <option value="Wanita">Wanita</option>
+                            </select>
+                            <label for="floatingSelect">Pilih Jenis Kelamin</label>
+                        </div>
 
-                            <div class="form-floating mb-3">
-                                <input class="form-control me-2 mb-2 " type="number" placeholder="Berapa usia anda?" name="usia" autocomplete="off">
-                                <label>Masukan usia anda</label>
-                            </div>
-                            <input class="form-control me-2 mb-2 " type="file" placeholder="Masukan gambar" name="gambar" autocomplete="off">
-                            <button class="btn btn-success w-100" type="submit" name="add"><i class="bi bi-person-fill-add"></i>Tambah</button>
-                        </form>
-                    </div>
-                    <div class="mb-3 justify-content-md-end text-center">
-                        <a href="http://localhost/My%20All%20Project/" class="btn btn-outline-danger" type="button"><i class="bi bi-box-arrow-left"></i> Keluar</a>
-                    </div>
+                        <div class="form-floating mb-3">
+                            <input class="form-control me-2 mb-2 " type="number" placeholder="Berapa usia anda?" name="usia" autocomplete="off">
+                            <label>Masukan usia anda</label>
+                        </div>
+                        <input class="form-control me-2 mb-2 " type="file" placeholder="Masukan gambar" name="gambar" autocomplete="off">
+                        <button class="btn btn-success w-100" type="submit" name="add"><i class="bi bi-person-fill-add"></i>Tambah</button>
+                    </form>
+                </div>
+                <div class="mb-3 justify-content-md-end text-center">
+                    <a href="http://localhost/My%20All%20Project/" class="btn btn-outline-danger" type="button"><i class="bi bi-box-arrow-left"></i> Keluar</a>
                 </div>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
-        <!-- cari nama -->
-        <nav class="navbar ">
-            <div class="container-fluid">
-                <form class="d-flex" role="search" action="" method="post">
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-person-lines-fill"></i></span>
-                        <input class="form-control me-2 " type="search" autofocus placeholder="Cari Username" aria-label="Search" name="nama" autocomplete="off">
-                    </div>
-                    <button class="btn btn-outline-success" type="submit" name="cari"><i class="bi bi-search"></i></button>
-                </form>
+    <!-- cari nama -->
+    <section class="search" id="search">
+        <div class="container pt-5">
+            <div class="row mt-5">
+                <div class="col-md-6 offset-md-3">
+                    <form class="d-flex" role="search" action="" method="post">
+                        <div class="input-group">
+                            <span class="input-group-text"><i class="bi bi-person-lines-fill"></i>
+                            </span>
+                            <input class="form-control me-2 " type="search" autofocus placeholder="Cari Username" aria-label="Search" name="nama" autocomplete="off">
+                        </div>
+                        <button class="btn btn-outline-success" type="submit" name="cari"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
             </div>
-        </nav>
+        </div>
+    </section>
 
 
-        <!-- tabel data -->
-        <table class="table text-center table-bordered border-dark">
-            <thead>
-                <tr>
-                    <th scope="col"><i class="bi bi-list-ol"></i> #</th>
-                    <th scope="col"><i class="bi bi-image"></i> Gambar</th>
-                    <th scope="col">Nama</th>
-                    <th scope="col">Gender</th>
-                    <th scope="col">Usia</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody class="table-group-divider">
-                <?php $i = 1;
-                while ($row = (mysqli_fetch_assoc($result))) : ?>
-                    <tr>
-                        <th scope="row"><?= $i; ?></th>
-                        <td><img class="rounded " style="width: 50px;" src="img/<?= $row["gambar"]; ?>"></td>
-                        <td><?= $row["nama"]; ?></td>
-                        <td><?= $row["jeniskelamin"]; ?></td>
-                        <td><?= $row["usia"]; ?></td>
-                        <td><a class="btn btn-info btn-sm" href="ubah.php?id=<?= $row["id"]; ?>" role="button"><i class="bi bi-pencil-square"></i> Ubah</a> |
-                            <a class="btn btn-danger btn-sm" href="hapus.php?id=<?= $row["id"]; ?>" role="button" onclick="return confirm('Are you sure?');"><i class="bi bi-trash3"></i> Hapus</a>
-                        </td>
-                    </tr>
-                <?php $i++;
-                endwhile; ?>
-            </tbody>
-        </table>
 
+    <!-- tabel data -->
+    <div class="container-fluid my-5">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table text-center table-bordered border-dark">
+                    <thead>
+                        <tr>
+                            <th scope="col"><i class="bi bi-list-ol"></i> #</th>
+                            <th scope="col"><i class="bi bi-image"></i> Gambar</th>
+                            <th scope="col"><i class="bi bi-person-vcard"></i> Nama</th>
+                            <th scope="col"><i class="bi bi-gender-ambiguous"></i> Gender</th>
+                            <th scope="col"><i class="bi bi-calendar-check"></i> Usia</th>
+                            <th scope="col"><i class="bi bi-tools"></i> Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider">
+                        <?php $i = 1;
+                        while ($row = (mysqli_fetch_assoc($result))) : ?>
+                            <tr>
+                                <th scope="row"><?= $i; ?></th>
+                                <td><img class="rounded " style="width: 50px;" src="img/<?= $row["gambar"]; ?>"></td>
+                                <td><?= $row["nama"]; ?></td>
+                                <td><?= $row["jeniskelamin"]; ?></td>
+                                <td><?= $row["usia"]; ?></td>
+                                <td><a class="btn btn-info btn-sm" href="ubah.php?id=<?= $row["id"]; ?>" role="button"><i class="bi bi-pencil-square"></i> Ubah</a> |
+                                    <a class="btn btn-danger btn-sm" href="hapus.php?id=<?= $row["id"]; ?>" role="button" onclick="return confirm('Are you sure?');"><i class="bi bi-trash3"></i> Hapus</a>
+                                </td>
+                            </tr>
+                        <?php $i++;
+                        endwhile; ?>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
+
 
     <script src="js/bootstrap.bundle.min.js"></script>
 </body>

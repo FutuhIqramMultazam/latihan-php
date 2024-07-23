@@ -1,0 +1,28 @@
+@font-face {
+  font-family: "sacramento";
+  src: url(fonts/Sacramento-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "work sans";
+  src: url(fonts/WorkSans-VariableFont_wght.ttf) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "work sans";
+  src: url(fonts/WorkSans-Italic-VariableFont_wght.ttf) format("truetype");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "arabic";
+  src: url(fonts/NotoSansArabic-Medium.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "nunito";
+  src: url(fonts/Nunito-VariableFont_wght.ttf) format("truetype");
+}
