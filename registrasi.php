@@ -118,7 +118,7 @@ if (isset($_POST["kirim"])) {
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Jika anda memiliki kesulitan dalam mendaftarkan diri yang pertama baca dulu bismillah, jika masih tidak bisa maka hubungi saya melalui link di bawah ini
+                    Jika anda memiliki kesulitan dalam mendaftarkan diri yang pertama baca dulu bismillah, jika masih tidak bisa maka hubungi saya melalui link di bawah ini, Hatur nuhun
                 </div>
                 <div class="modal-footer">
                     <div class="m-auto d-inline-block">
