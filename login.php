@@ -59,6 +59,10 @@ if (isset($_POST["login"])) {
     <style>
         body {
             background-color: black;
+            background-image: url(img/bg-data.jpeg);
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
         }
 
         .sign-in-form i {
