@@ -15,6 +15,9 @@ if (isset($_POST["login"])) {
             header("location:index.php");
             exit;
         }
+        $salahsandi = true;
+    } else {
+        $salahnama = true;
     }
 }
 
@@ -36,12 +39,12 @@ if (isset($_POST["login"])) {
             background-color: black;
         }
 
-        i {
+        a i {
             color: white;
             transition: 0.1s;
         }
 
-        i:hover {
+        a i:hover {
             color: gray;
             font-size: 20px;
         }
@@ -69,32 +72,20 @@ if (isset($_POST["login"])) {
             height: 100vh;
             /* Menggunakan tinggi viewport untuk kontainer */
         }
+
+        .salahsandi,
+        .salahnama {
+            top: 0px;
+            left: 150px;
+        }
     </style>
 </head>
 
 <body>
-    <!-- Modal -->
-    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="errorModalLabel">Gagal Masuk</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Password Salah
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <div class="container ">
         <div class="wrapper">
-            <div class="row bg-dark ">
+            <div class="row bg-dark position-relative">
                 <div class="col-md-6 sign-in-form">
                     <h2>Sign in</h2>
                     <div class="d-flex justify-content-center">
@@ -104,7 +95,24 @@ if (isset($_POST["login"])) {
                     </div>
                     <form action="" method="post">
                         <div class="mb-3">
-                            <label for="username" class="form-label">username</label>
+                            <?php if (isset($salahnama)) : ?>
+                                <div class="position-absolute m-3 salahnama alert alert-danger d-flex align-items-center" role="alert">
+                                    <i class="bi bi-exclamation-triangle text-danger me-2"></i>
+                                    <div>
+                                        Username salah atau tidak terdaftar
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+
+                            <?php if (isset($salahsandi)) : ?>
+                                <div class="position-absolute m-3 salahsandi alert alert-danger d-flex align-items-center" role="alert">
+                                    <i class="bi bi-exclamation-triangle text-danger me-2"></i>
+                                    <div>
+                                        Password yang anda masukan salah
+                                    </div>
+                                </div>
+                            <?php endif; ?>
+                            <label for="username" class="form-label">Username</label>
                             <input name="username" type="text" class="form-control" id="username" placeholder="username">
                         </div>
                         <div class="mb-3">
