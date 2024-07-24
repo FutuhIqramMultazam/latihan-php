@@ -172,15 +172,15 @@ if (isset($_POST["login"])) {
                     </div>
 
                     <!-- card modal -->
-
                     <div class="modal fade" id="daftar-user" tabindex="-1" aria-labelledby="daftar-userLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <h1 class="modal-title fs-5" id="daftar-userLabel">Daftar akun yang sudah terdaftar</h1>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
+
                                     <div class="list-group">
                                         <?php while ($row = (mysqli_fetch_assoc($result))) : ?>
                                             <a href="#" class="list-group-item list-group-item-action" aria-current="true">
@@ -192,7 +192,6 @@ if (isset($_POST["login"])) {
                             </div>
                         </div>
                     </div>
-
                     <!-- akhir card modal -->
 
                 </div>
