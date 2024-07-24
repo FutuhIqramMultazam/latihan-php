@@ -8,42 +8,80 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="icons/bootstrap-icons.css">
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        i {
+            color: white;
+            transition: 0.1s;
+        }
+
+        i:hover {
+            color: gray;
+            font-size: 20px;
+        }
+
+        .sign-in-form {
+            padding: 2rem;
+        }
+
+        .sign-up-form {
+            color: white;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .row {
+            border-radius: 10px;
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Menggunakan tinggi viewport untuk kontainer */
+        }
+    </style>
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg bg-black">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link " aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
+    <div class="container ">
+        <div class="wrapper">
+            <div class="row bg-dark ">
+                <div class="col-md-6 sign-in-form">
+                    <h2>Sign in</h2>
+                    <div class="d-flex justify-content-center">
+                        <a href="#"><i class="bi bi-facebook mx-2"></i></a>
+                        <a href="#"><i class="bi bi-google mx-2"></i></a>
+                        <a href="#"><i class="bi bi-linkedin mx-2"></i></a>
+                    </div>
+                    <form>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="Email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" placeholder="Password">
+                        </div>
+                        <div class="mb-3">
+                            <a href="#">Lupa kata sandi anda?</a>
+                        </div>
+                        <button type="submit" class="btn btn-success">Masuk</button>
+                    </form>
                 </div>
-            </div>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <form>
-                    <h1 class="width">Masukan akun anda</h1>
-                    <label for="name" class="form-label">Username</label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-person"></i></span>
-                        <input type="text" name="name" id="name" class="form-control" placeholder="Masukan Username">
-                    </div>
-                    <label for="sandi" class="form-label"></label>
-                    <div class="input-group">
-                        <span class="input-group-text"><i class="bi bi-lock"></i></span>
-                        <input type="text" name="password" id="sandi" class="form-control" placeholder="Masukan Password">
-                    </div>
-                </form>
+                <div class="col-md-6 sign-up-form">
+                    <h2>Assalamualaikum, Hai!</h2>
+                    <p>Jika anda belum memiliki akun, silahkan membuatnya dengan memencet tombol di bawah ini</p>
+                    <a href="http://localhost/My%20All%20Project/latihan%20PHP/registrasi.php" class="btn btn-primary">Daftar</a>
+                </div>
             </div>
         </div>
     </div>

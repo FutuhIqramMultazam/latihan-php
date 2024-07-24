@@ -156,7 +156,7 @@ if (isset($_POST["add"])) {
                     </form>
                 </div>
                 <div class="mb-3 justify-content-md-end text-center">
-                    <a href="http://localhost/My%20All%20Project/" class="btn btn-outline-danger" type="button"><i class="bi bi-box-arrow-left"></i> Keluar</a>
+                    <a href="http://localhost/My%20All%20Project/latihan%20PHP/login.php" class="btn btn-outline-danger" type="button"><i class="bi bi-door-open"></i> Keluar</a>
                 </div>
             </div>
         </div>
