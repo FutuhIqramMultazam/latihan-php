@@ -156,7 +156,7 @@ if (isset($_POST["login"])) {
                     <h2>Assalamualaikum, Hai!</h2>
                     <p>Jika anda belum memiliki akun, silahkan membuatnya dengan memencet tombol link di bawah ini.</p>
                     <div class="text-center">
-                        <a href="http://localhost/My%20All%20Project/latihan%20PHP/registrasi.php" class="btn btn-info w-50 "><i class="bi bi-person-fill-add"></i> Daftar</a>
+                        <a href="http://localhost/My%20All%20Project/latihan%20PHP/registrasi.php" class="btn btn-primary w-50 "><i class="bi bi-person-plus"></i> Daftar</a>
                         <a href="" data-bs-toggle="modal" data-bs-target="#daftar-user" class="position-absolute yang-daftar text-decoration-none "><i class="bi bi-eye"></i> Users</a>
                     </div>
 

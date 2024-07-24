@@ -164,7 +164,7 @@ if (isset($_POST["kirim"])) {
                                 <input type="password" class="form-control" id="confirmPassword" placeholder="Konfirmasi password" name="password2">
                             </div>
                         </div>
-                        <button type="submit" class="mt-4 btn btn-primary w-100" name="kirim">Daftar</button>
+                        <button type="submit" class="mt-4 btn btn-primary w-100" name="kirim"><i class="bi bi-person-plus"></i> Daftar <i class="bi bi-arrow-up"></i></button>
                         <a href="#" class="bantuan" data-bs-toggle="modal" data-bs-target="#exampleModal">Petunjuk <i class="bi bi-info-circle-fill"></i></a>
                     </form>
                 </div>
