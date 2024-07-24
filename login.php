@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if (isset($_SESSION["login"])) {
+    header("location:index.php");
+    exit;
+}
+
 $conn = mysqli_connect("localhost", "root", "", "phpdasar");
 
 $result = mysqli_query($conn, "SELECT username FROM user");
@@ -27,10 +32,12 @@ if (isset($_POST["login"])) {
         // cek passsword
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row["password"])) {
+            $_SESSION["login"] = true;
             header("location:index.php");
             exit;
+        } else {
+            $salahsandi = true;
         }
-        $salahsandi = true;
     } else {
         $salahnama = true;
     }

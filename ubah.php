@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("location:login.php");
+    exit;
+}
+
 $conn = mysqli_connect("localhost", "root", "", "dbicam");
 
 $id = $_GET["id"];

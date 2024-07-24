@@ -1,5 +1,12 @@
 <?php
 
+session_start();
+
+if (!isset($_SESSION["login"])) {
+    header("location:login.php");
+    exit;
+}
+
 $conn = mysqli_connect("localhost", "root", "", "dbicam");
 
 $result = mysqli_query($conn, "SELECT * FROM daftar_nama ");
@@ -156,7 +163,7 @@ if (isset($_POST["add"])) {
                     </form>
                 </div>
                 <div class="mb-3 justify-content-md-end text-center">
-                    <a href="http://localhost/My%20All%20Project/latihan%20PHP/login.php" class="btn btn-outline-danger" type="button"><i class="bi bi-door-open"></i> Keluar</a>
+                    <a href="logout.php" class="btn btn-outline-danger" type="button"><i class="bi bi-door-open"></i> Keluar</a>
                 </div>
             </div>
         </div>
