@@ -1,3 +1,25 @@
+<?php
+
+$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+
+if (isset($_POST["login"])) {
+    $username = htmlspecialchars($_POST["username"]);
+    $password = htmlspecialchars($_POST["password"]);
+
+    $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
+    // cek username
+    if (mysqli_num_rows($result) === 1) {
+        // cek passsword
+        $row = mysqli_fetch_assoc($result);
+        if (password_verify($password, $row["password"])) {
+            header("location:index.php");
+            exit;
+        }
+    }
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="dark">
 
@@ -51,6 +73,24 @@
 </head>
 
 <body>
+    <!-- Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="errorModalLabel">Gagal Masuk</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Password Salah
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="container ">
         <div class="wrapper">
@@ -62,19 +102,19 @@
                         <a href="#"><i class="bi bi-google mx-2"></i></a>
                         <a href="#"><i class="bi bi-linkedin mx-2"></i></a>
                     </div>
-                    <form>
+                    <form action="" method="post">
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <label for="username" class="form-label">username</label>
+                            <input name="username" type="text" class="form-control" id="username" placeholder="username">
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                         </div>
                         <div class="mb-3">
-                            <a href="#">Lupa kata sandi anda?</a>
+                            <a href="#" class="text-decoration-none">Lupa kata sandi anda?</a>
                         </div>
-                        <button type="submit" class="btn btn-success">Masuk</button>
+                        <button type="submit" name="login" class="btn btn-success">Masuk</button>
                     </form>
                 </div>
                 <div class="col-md-6 sign-up-form">
@@ -86,6 +126,7 @@
         </div>
     </div>
     <script src="js/bootstrap.js"></script>
+
 </body>
 
 </html>

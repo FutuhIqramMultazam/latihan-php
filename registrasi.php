@@ -47,11 +47,12 @@ if (isset($_POST["kirim"])) {
     $password = password_hash($password2, PASSWORD_DEFAULT);
 
     // masukan hasil program kedalam database atau MySQL
-    $query = "INSERT INTO user (username,`password`) VALUES ('$username','$password')";
+    $query = "INSERT INTO user (username,password) VALUES ('$username','$password')";
     mysqli_query($conn, $query);
 
     echo "<script>
     alert('Selamat anda sudah memiliki akun');
+     document.location.href='login.php';
     </script>";
 }
 
