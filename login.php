@@ -1,14 +1,26 @@
 <?php
 session_start();
 
-if (isset($_SESSION["login"])) {
+if (isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
+    $id = $_COOKIE["id"];
+    $key = $_COOKIE["key"];
+
+    // ambil username berdasarkan id
+    $result = mysqli_query($conn, "SELECT username from user WHERE id = $id");
+    $row = mysqli_fetch_assoc($result);
+
+    // cek cookie dan username
+    if ($key === hash('sha256', $row["username"])) {
+        $_SESSION["masuk"] = true;
+    }
+}
+
+if (isset($_SESSION["masuk"])) {
     header("location:index.php");
     exit;
 }
 
 $conn = mysqli_connect("localhost", "root", "", "phpdasar");
-
-$result = mysqli_query($conn, "SELECT username FROM user");
 
 
 if (isset($_POST["login"])) {
@@ -32,7 +44,17 @@ if (isset($_POST["login"])) {
         // cek passsword
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row["password"])) {
-            $_SESSION["login"] = true;
+
+            //set session
+            $_SESSION["masuk"] = true;
+
+            //set cookie
+            if (isset($_POST["remember"])) {
+
+                // buat cookie
+                setcookie('id', $row["id"], time() + 60);
+                setcookie('key', hash('sha256', $row["username"]), time() + 60);
+            }
             header("location:index.php");
             exit;
         } else {
@@ -42,6 +64,11 @@ if (isset($_POST["login"])) {
         $salahnama = true;
     }
 }
+
+
+
+// query untuk melihat user
+$resultforsee = mysqli_query($conn, "SELECT username FROM user");
 
 ?>
 
@@ -157,10 +184,14 @@ if (isset($_POST["login"])) {
                             <label for="password" class="form-label">Password</label>
                             <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                         </div>
-                        <div class="mb-3">
-                            <a href="#" class="text-decoration-none hover-line">Lupa kata sandi anda?</a>
+                        <div class="mb-2">
+                            <label for="remember" class="form-label">Ingat saya</label>
+                            <input name="remember" type="checkbox" id="remember">
                         </div>
                         <button type="submit" name="login" class="btn btn-success">Masuk</button>
+                        <div class="mt-3">
+                            <a href="#" class="text-decoration-none hover-line">Lupa kata sandi anda?</a>
+                        </div>
                     </form>
                 </div>
                 <div class="col-md-6 sign-up-form">
@@ -182,9 +213,10 @@ if (isset($_POST["login"])) {
                                 <div class="modal-body">
 
                                     <div class="list-group">
-                                        <?php while ($row = (mysqli_fetch_assoc($result))) : ?>
+                                        <?php while ($seeuser = (mysqli_fetch_assoc($resultforsee))) : ?>
                                             <a href="#" class="list-group-item list-group-item-action" aria-current="true">
-                                                <?= $row["username"]; ?></a>
+                                                <?= $seeuser["username"]; ?>
+                                            </a>
                                         <?php endwhile; ?>
 
                                     </div>
