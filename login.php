@@ -1,6 +1,10 @@
 <?php
 session_start();
 
+$conn = mysqli_connect("localhost", "root", "", "phpdasar");
+
+
+// cek apakah masih ada cookie?
 if (isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
     $id = $_COOKIE["id"];
     $key = $_COOKIE["key"];
@@ -15,12 +19,11 @@ if (isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
     }
 }
 
+
 if (isset($_SESSION["masuk"])) {
     header("location:index.php");
     exit;
 }
-
-$conn = mysqli_connect("localhost", "root", "", "phpdasar");
 
 
 if (isset($_POST["login"])) {
@@ -28,16 +31,6 @@ if (isset($_POST["login"])) {
     $password = htmlspecialchars($_POST["password"]);
 
     $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
-
-    // untuk the buging
-    // echo mysqli_num_rows($result);
-    // echo "<br>";
-    // $row = mysqli_fetch_assoc($result);
-    // var_dump($row);
-    // $liatsandi = password_verify($password, $row["password"]);
-    // echo "<br>";
-    // var_dump($liatsandi);
-    // die;
 
     // cek username
     if (mysqli_num_rows($result) === 1) {
