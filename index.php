@@ -127,8 +127,8 @@ if (isset($_POST["add"])) {
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
                 <!-- <span class="navbar-toggler-icon"></span> -->
                 <i class="bi bi-person-plus-fill"></i>
-                <i class="bi bi-three-dots"></i>
-                <i class="bi bi-box-arrow-left"></i>
+                <i class="bi bi-journals"></i>
+                <i class="bi bi-door-open"></i>
             </button>
             <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
@@ -163,6 +163,7 @@ if (isset($_POST["add"])) {
                     </form>
                 </div>
                 <div class="mb-3 justify-content-md-end text-center">
+                    <a href="daftar_buku.php" class="btn btn-primary me-3" type="button">Daftar Buku <i class="bi bi-journals"></i></a>
                     <a href="logout.php" class="btn btn-outline-danger" type="button"><i class="bi bi-door-open"></i> Keluar</a>
                 </div>
             </div>
