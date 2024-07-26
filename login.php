@@ -45,8 +45,8 @@ if (isset($_POST["login"])) {
             if (isset($_POST["remember"])) {
 
                 // buat cookie
-                setcookie('id', $row["id"], time() + 60);
-                setcookie('key', hash('sha256', $row["username"]), time() + 60);
+                setcookie('id', $row["id"], time() + 120);
+                setcookie('key', hash('sha256', $row["username"]), time() + 120);
             }
             header("location:index.php");
             exit;
