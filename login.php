@@ -85,15 +85,6 @@ $resultforsee = mysqli_query($conn, "SELECT username FROM user");
             background-repeat: no-repeat;
         }
 
-        .sign-in-form i {
-            color: white;
-            transition: 0.1s;
-        }
-
-        .sign-in-form i:hover {
-            color: gray;
-            font-size: 20px;
-        }
 
         .sign-in-form {
             padding: 2rem;
@@ -175,13 +166,18 @@ $resultforsee = mysqli_query($conn, "SELECT username FROM user");
                         </div>
                         <div class="mb-3">
                             <label for="password" class="form-label">Password</label>
-                            <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                            <div class="input-group">
+                                <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                                <span id="bg" class="input-group-text ">
+                                    <i class="bi bi-eye-slash" id="liat"></i>
+                                </span>
+                            </div>
                         </div>
-                        <div class="mb-2">
-                            <label for="remember" class="form-label">Ingat saya</label>
-                            <input name="remember" type="checkbox" id="remember">
+                        <div class="mb-2 ">
+                            <label for="remember" class="">Ingat saya</label>
+                            <input name="remember" class="form-check-input" type="checkbox" id="remember">
                         </div>
-                        <button type="submit" name="login" class="btn btn-success">Masuk</button>
+                        <button type="submit" name="login" class="mt-3 btn btn-success">Masuk</button>
                         <div class="mt-3">
                             <a href="#" class="text-decoration-none hover-line">Lupa kata sandi anda?</a>
                         </div>
@@ -224,6 +220,24 @@ $resultforsee = mysqli_query($conn, "SELECT username FROM user");
         </div>
     </div>
     <script src="js/bootstrap.js"></script>
+
+    <script>
+        const password = document.getElementById("password");
+        const liat = document.getElementById("liat");
+        const bg = document.getElementById("bg");
+
+        bg.addEventListener("click", function() {
+            if (password.type === "password") {
+                password.type = "text";
+                liat.classList.remove("bi-eye-slash");
+                liat.classList.add("bi-eye");
+            } else {
+                password.type = "password";
+                liat.classList.remove("bi-eye");
+                liat.classList.add("bi-eye-slash");
+            }
+        });
+    </script>
 
 </body>
 
