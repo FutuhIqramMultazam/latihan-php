@@ -130,6 +130,10 @@ $resultforsee = mysqli_query($conn, "SELECT username FROM user");
         .yang-daftar:hover {
             background-color: gray;
         }
+
+        #bg:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 
